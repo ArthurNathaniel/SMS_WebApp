@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p id="message">
+        Ghananananaa  
+        ATTENTION ATTENTION ATTENTION ‼‼‼‼  
+        Good Morning NSPs, please, personnels who are yet to submit their monthly evaluation forms should please exercise patience. We are currently experiencing network challenges. You would be notified when it is resolved. 
+    </p>
+    
+    <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+    <button onclick="sendSMS()">Share via SMS</button>
+    
+    <script>
+    function sendSMS() {
+        let phone = document.getElementById("phoneNumber").value;
+        let message = document.getElementById("message").innerText.trim();
+        let encodedMessage = encodeURIComponent(message);
+        
+        if (phone) {
+            window.location.href = `sms:${phone}?body=${encodedMessage}`;
+        } else {
+            alert("Please enter a phone number.");
+        }
+    }
+    </script>
+</body>
+</html>
